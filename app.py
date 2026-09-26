@@ -74,7 +74,9 @@ st.markdown("""
 # -----------------------------------------------------------------------------
 # 2. AUTOMATED BACKEND INITIALIZATION (VIA SECURE CLOUD SECRETS)
 # -----------------------------------------------------------------------------
-API_KEY = st.secrets["GEMINI_API_KEY"]
+import os
+
+API_KEY = os.environ.get("GEMINI_API_KEY")
 
 def get_gemini_client():
     try:
